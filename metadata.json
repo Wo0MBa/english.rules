@@ -1,0 +1,6 @@
+{
+  "name": "OGE Reels Studio — Virtual Exam Notepad",
+  "description": "Aesthetic 9:16 recording studio and interactive step sequencer for English OGE/EGE exam tutors to create vertical Reels and TikTok grammar breakdown shorts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

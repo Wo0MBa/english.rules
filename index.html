@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var nativeGOPD = Object.getOwnPropertyDescriptor;
+          var currentDesc = Object._getOwnPropertyDescriptor;
+          if (
+            typeof currentDesc === 'function' &&
+            Function.prototype.toString.call(currentDesc).indexOf('[native code]') !== -1
+          ) {
+            nativeGOPD = currentDesc;
+          }
+          var savedGOPD = nativeGOPD;
+          Object.defineProperty(Object, '_getOwnPropertyDescriptor', {
+            configurable: true,
+            enumerable: false,
+            get: function () {
+              return savedGOPD;
+            },
+            set: function (fn) {
+              if (
+                typeof fn === 'function' &&
+                Function.prototype.toString.call(fn).indexOf('[native code]') !== -1
+              ) {
+                savedGOPD = fn;
+              }
+            },
+          });
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>English Reels Studio — Virtual Grammar Notepad</title>
+    <meta name="description" content="Aesthetic 9:16 recording studio and interactive step sequencer for creating vertical Reels and TikTok English grammar breakdown shorts." />
+    <meta property="og:title" content="English Reels Studio — Virtual Grammar Notepad" />
+    <meta property="og:description" content="Aesthetic 9:16 recording studio and interactive step sequencer for creating vertical Reels and TikTok English grammar breakdown shorts." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#0d1117] text-[#e6edf3] antialiased selection:bg-sky-500/30 selection:text-sky-200">
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
